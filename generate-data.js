@@ -33,7 +33,9 @@ const randomProductList = (categoryList, numberOfProducts) => {
         price: Number.parseFloat(faker.commerce.price()),
         createdAt: Date.now(),
         updatedAt: Date.now(),
-        thumbnail: faker.image.imageUrl(),
+        thumbnail: faker.image.imageUrl(163, 163),
+        color: faker.commerce.color(),
+        brand: faker.commerce.productMaterial,
       };
 
       productList.push(product);
@@ -44,8 +46,8 @@ const randomProductList = (categoryList, numberOfProducts) => {
 };
 
 (() => {
-  const categoryList = randomCategoryList(4);
-  const productList = randomProductList(categoryList, 5);
+  const categoryList = randomCategoryList(18);
+  const productList = randomProductList(categoryList, 10);
   const db = {
     categories: categoryList,
     products: productList,
