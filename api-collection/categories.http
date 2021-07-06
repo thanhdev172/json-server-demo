@@ -1,0 +1,28 @@
+@baseUrl=http://localhost:3000/api
+@resourceName=categories
+
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+# @name add
+POST {{baseUrl}}/posts
+Content-Type: application/json
+
+{
+    "title": "json-server demo",
+    "author": "NCT"
+}
+
+###
+# @name update
+PATCH {{baseUrl}}/{{resourceName}}/1
+Content-Type: application/json
+
+{
+    "title": "json update"
+}
+
+###
+# @name remove
+DELETE {{baseUrl}}/{{resourceName}}/3

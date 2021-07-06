@@ -1,0 +1,45 @@
+@baseUrl=http://localhost:3000/api
+@resourceName=products
+
+# @name getAll
+GET {{baseUrl}}/{{resourceName}}
+
+###
+# @name sort
+GET {{baseUrl}}/{{resourceName}}?_sort=price&_order=asc
+
+###
+# @name filterProducts
+GET {{baseUrl}}/{{resourceName}}?name_like=Licensed 
+###
+# @name pagination
+GET {{baseUrl}}/{{resourceName}}?_page=2&_limit=2
+
+
+###
+# @name add
+POST {{baseUrl}}/{{resourceName}}
+Content-Type: application/json
+
+
+
+{
+     "categoryId": "4d4ba560-0708-46fd-9a7b-8e888dda9d9e",
+    "name": "Small Cotton Gloves",
+    "desc": "The Apollotech B340 is an affordable wireless mouse with reliable connectivity, 12 months battery life and modern design",
+    "price": 3,
+    "thumbnail": "http://placeimg.com/640/480"
+}
+
+###
+# @name update
+PATCH {{baseUrl}}/{{resourceName}}/6Zq6pnn
+Content-Type: application/json
+
+{
+     "price": 10
+}
+
+###
+# @name remove
+DELETE {{baseUrl}}/{{resourceName}}/3
