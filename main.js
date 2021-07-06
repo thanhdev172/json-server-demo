@@ -28,12 +28,13 @@ server.use((req, res, next) => {
 
 router.render = (req, res) => {
   const headers = res.getHeaders();
-  const totalCountHeaders =
-    headers["x-total-count"].__wrapped__.products.length;
-  // const totalCountHeaders = headers["x-total-count"];
+  let totalCountHeaders;
+  if (headers["x-total-count"]) {
+    totalCountHeaders = headers["x-total-count"].__wrapped__.products.length;
+  }
   const queryParams = queryString.parse(req._parsedUrl.query);
 
-  if (req.method === "GET" && totalCountHeaders) {
+  if (req.method === "GET" && headers["x-total-count"]) {
     console.log("abc");
     const result = {
       data: res.locals.data,
