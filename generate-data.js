@@ -33,7 +33,7 @@ const randomProductList = (categoryList, numberOfProducts) => {
         price: Number.parseFloat(faker.commerce.price()),
         createdAt: Date.now(),
         updatedAt: Date.now(),
-        thumbnail: faker.image.imageUrl(163, 163),
+        thumbnail: faker.image.nature(163, 163),
         color: faker.commerce.color(),
         brand: faker.commerce.productMaterial,
       };
