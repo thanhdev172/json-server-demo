@@ -4,7 +4,7 @@ const fs = require("fs");
 const sizeList = ["XS", "S", "M", "L", "XL"];
 
 const randomSize = () => {
-  const result = Math.floor(Math.random() * 6);
+  const result = Math.floor(Math.random() * 5);
 
   return sizeList[result];
 };
