@@ -43,8 +43,8 @@ const randomProductList = (categoryList, numberOfProducts) => {
         updatedAt: Date.now(),
         thumbnail: faker.image.nature(163, 163),
         color: faker.commerce.color(),
-        brand: faker.commerce.productMaterial,
         size: randomSize(),
+        brand: faker.commerce.productMaterial(),
       };
 
       productList.push(product);
