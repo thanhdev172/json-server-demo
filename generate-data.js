@@ -1,6 +1,14 @@
 const faker = require("faker");
 const fs = require("fs");
 
+const sizeList = ["XS", "S", "M", "L", "XL"];
+
+const randomSize = () => {
+  const result = Math.floor(Math.random() * 6);
+
+  return sizeList[result];
+};
+
 const randomCategoryList = (n) => {
   if (n <= 0) return [];
   const categoryList = [];
@@ -36,6 +44,7 @@ const randomProductList = (categoryList, numberOfProducts) => {
         thumbnail: faker.image.nature(163, 163),
         color: faker.commerce.color(),
         brand: faker.commerce.productMaterial,
+        size: randomSize(),
       };
 
       productList.push(product);
